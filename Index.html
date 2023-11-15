@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification de fichier MP3</title>
+</head>
+<body>
+
+    <h1>Modification de fichier MP3</h1>
+
+    <form action="/run_script" method="post" enctype="multipart/form-data">
+        <input type="file" name="audio" accept=".mp3">
+        <button type="submit">Modifier le fichier MP3</button>
+    </form>
+
+    <% if modification_done: %>
+        <p>La modification du fichier MP3 est terminée.</p>
+        <a href="/download_modified_file/{{ filename }}" download>
+            <button>Télécharger le fichier modifié</button>
+        </a>
+    <% endif %>
+
+</body>
+</html>
